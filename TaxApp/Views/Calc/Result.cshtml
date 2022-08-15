@@ -1,0 +1,38 @@
+﻿@model TaxApp.Models.Calc
+@{
+    ViewData["Title"] = "Index";
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    
+        <div class="card-body">
+            <div>
+                @if (Model.Elder)
+                {
+                    <div>
+                        <h3>you only pay 85% of the tax!</h3>
+                    </div>
+                }
+                <div>
+                    <h3>calculated Salary</h3>
+                    <p><b>monthly</b> salary after tax: R @Model.MonthlySalaryAfterTax </p>
+                    <p><b>Yearly</b> salary after tax:R @Model.SalaryAfterTax</p>
+                    <h3>tax breakdown</h3>
+                    <p><b>yearly</b> tax controbution: R @Model.TaxPerAnnum</p>
+					<p><b>monthly</b> tax controbution: R @Model.TaxPerMonth</p>
+                </div>
+                <a asp-action="index">back</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿@model TaxApp.Models.Calc
+@{
+    ViewData["Title"] = "Index";
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h1>welcome to out tax breakdown calculator</h1>
+         </div>
+
+        @using (Html.BeginForm("Index", "Calc", FormMethod.Post, new { @class = "needs-validation" }))
+        {
+      
+        <div class="form-group">
+           <label for="age">Age</label>
+           @Html.TextBox("Age",Model.Age,new {@class ="form-control"})
+           <small id="agehelp" class="form-text text-muted">this is to see if you qualify for elder discount</small>
+        </div>
+
+        <div class="form-group">
+            <label for="salary">Annual Salary</label>
+                @Html.TextBox("Salary",Model.Salary,new {@class ="form-control"})
+                <small id="salaryhelp" class="form-text text-muted">Enter your total yearly salary </small>
+        </div>
+        
+        <br />
+        <button type="submit" class="btn btn-primary" name="calculate">Submit</button>
+           
+    }
+        
+
+    </div>
+</body>
+</html>
